@@ -1,12 +1,10 @@
-const jsonServer = require("json-server") // importing json-server library
-const server = jsonServer.create()
-const router = jsonServer.router("db.json")
-const middlewares = jsonServer.defaults()
-const port = process.env.PORT || 5000
-server.use(middlewares)
-server.use(jsonServer.rewriter({
-  '/api/*': '/$1',
-}))
-server.use(router)
+const jsonServer = require("json-server");
+const server = jsonServer.create();
+const router = jsonServer.router("db.json");
+const middlewares = jsonServer.defaults();
+const port = process.env.PORT || 3001;
 
-server.listen(port)
+server.use(middlewares);
+server.use(router);
+
+server.listen(port);
